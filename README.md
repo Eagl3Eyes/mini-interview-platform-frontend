@@ -26,9 +26,9 @@ This project is the frontend for a mini interview platform.  It's built using Re
 - TODO: Add more detailed feature descriptions based on code analysis.
 
 ## 🖥️ Screenshots
-
-![Screenshot 1](path-to-screenshot) <!-- TODO: Add actual screenshots -->
-![Screenshot 2](path-to-screenshot) <!-- TODO: Add mobile screenshots -->
+<img width="1920" height="947" alt="image" src="https://github.com/user-attachments/assets/f8b0b559-3767-48d5-970e-aba467d40d03" />
+<img width="1920" height="1043" alt="image" src="https://github.com/user-attachments/assets/94d78241-ec83-40ec-a5f9-5f488035d713" />
+<img width="1920" height="947" alt="image" src="https://github.com/user-attachments/assets/6acb90c3-cc77-43bc-93dd-5097d69b85a6" />
 
 ## 🛠️ Tech Stack
 
