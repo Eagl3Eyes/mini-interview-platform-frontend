@@ -12,7 +12,7 @@
 **Frontend for a mini interview platform.**
 
 [Live Demo](https://mini-interview-platform.vercel.app/) |
-[Documentation](https://docs-link.com) <!-- TODO: Add documentation link -->
+[Documentation]() <!-- TODO: Add documentation link -->
 
 </div>
 
@@ -23,12 +23,13 @@ This project is the frontend for a mini interview platform.  It's built using Re
 ## ✨ Features
 
 - User interface for conducting and participating in interviews.
-- TODO: Add more detailed feature descriptions based on code analysis.
 
 ## 🖥️ Screenshots
+<img width="1920" height="947" alt="image" src="https://github.com/user-attachments/assets/f8b0b559-3767-48d5-970e-aba467d40d03" />
+<img width="1920" height="1043" alt="image" src="https://github.com/user-attachments/assets/94d78241-ec83-40ec-a5f9-5f488035d713" />
+<img width="1920" height="947" alt="image" src="https://github.com/user-attachments/assets/6acb90c3-cc77-43bc-93dd-5097d69b85a6" />
+<img width="1920" height="1124" alt="image" src="https://github.com/user-attachments/assets/23d2ece1-d3dc-49c9-ada5-d6604820dd57" />
 
-![Screenshot 1](path-to-screenshot) <!-- TODO: Add actual screenshots -->
-![Screenshot 2](path-to-screenshot) <!-- TODO: Add mobile screenshots -->
 
 ## 🛠️ Tech Stack
 
@@ -113,7 +114,7 @@ mini-interview-platform-frontend/
 
 ## 🧪 Testing
 
-TODO: Add testing information.
+Testing is not currently implemented in this project.
 
 
 ## 🚀 Deployment
@@ -123,12 +124,12 @@ This project is deployed using Vercel.  The `vercel.json` file configures the de
 
 ## 🤝 Contributing
 
-TODO: Add contributing guidelines.
+Contributions are welcome! Please open an issue or submit a pull request.
 
 
 ## 📄 License
 
-TODO: Add license information
+This project is not currently licensed. Adding an appropriate open-source license (e.g., MIT, GPL) is recommended.
 
 
 ---
