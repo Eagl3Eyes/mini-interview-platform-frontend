@@ -333,13 +333,13 @@ export default function Dashboard() {
             {/* Tabs */}
             <div className="flex gap-4 border-b border-gray-300 mb-4">
                 <button
-                    className={`px-4 py-2 uppercase ${activeTab === "candidates" ? "border-b-2 border-blue-600 font-semibold" : ""}`}
+                    className={`px-4 py-2 uppercase cursor-pointer ${activeTab === "candidates" ? "border-b-2 border-blue-600 font-semibold" : ""}`}
                     onClick={() => { setActiveTab("candidates"); setCurrentPage(1); }}
                 >
                     Candidates
                 </button>
                 <button
-                    className={`px-4 py-2 uppercase ${activeTab === "interviews" ? "border-b-2 border-blue-600 font-semibold" : ""}`}
+                    className={`px-4 py-2 uppercase cursor-pointer ${activeTab === "interviews" ? "border-b-2 border-blue-600 font-semibold" : ""}`}
                     onClick={() => { setActiveTab("interviews"); setCurrentPage(1); }}
                 >
                     Upcoming Interviews
