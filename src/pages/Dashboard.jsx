@@ -55,6 +55,18 @@ function FeedbackCard({ feedback }) {
     );
 }
 
+// Skeleton Card
+function SkeletonCard() {
+    return (
+        <div className="bg-white rounded-xl shadow-sm p-5 border border-gray-200 animate-pulse">
+            <div className="h-6 bg-gray-300 rounded w-2/3 mb-3"></div>
+            <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
+            <div className="h-4 bg-gray-200 rounded w-1/3 mb-2"></div>
+            <div className="h-5 bg-gray-300 rounded w-1/4"></div>
+        </div>
+    );
+}
+
 export default function Dashboard() {
     const [candidates, setCandidates] = useState([]);
     const [interviews, setInterviews] = useState([]);
@@ -160,7 +172,7 @@ export default function Dashboard() {
         <div className="p-6 space-y-8 max-w-7xl mx-auto bg-gray-50 min-h-screen">
             {/* Header & Filters */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
+                <h1 className="text-3xl font-bold uppercase text-gray-800">Dashboard</h1>
                 <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
                     <input
                         type="text"
@@ -170,7 +182,7 @@ export default function Dashboard() {
                         onChange={(e) => setQuery(e.target.value)}
                     />
                     <select
-                        className="border px-3 py-2 rounded w-full md:w-40"
+                        className="border px-3 py-2 rounded w-full md:w-40 cursor-pointer"
                         value={roleFilter}
                         onChange={(e) => setRoleFilter(e.target.value)}
                     >
@@ -190,13 +202,13 @@ export default function Dashboard() {
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4">
                 <button
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                    className="bg-blue-600 text-white uppercase px-4 py-2 rounded hover:bg-blue-700 transition cursor-pointer"
                     onClick={() => setShowCandidateForm(!showCandidateForm)}
                 >
                     Add New Candidate
                 </button>
                 <button
-                    className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition"
+                    className="bg-indigo-600 text-white uppercase px-4 py-2 rounded hover:bg-indigo-700 transition cursor-pointer"
                     onClick={() => setShowInterviewForm(!showInterviewForm)}
                 >
                     Schedule Interview
@@ -318,22 +330,16 @@ export default function Dashboard() {
                 </form>
             )}
 
-            {loading && (
-                <div className="flex justify-center items-center py-6">
-                    <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
-                </div>
-            )}
-
             {/* Tabs */}
             <div className="flex gap-4 border-b border-gray-300 mb-4">
                 <button
-                    className={`px-4 py-2 ${activeTab === "candidates" ? "border-b-2 border-blue-600 font-semibold" : ""}`}
+                    className={`px-4 py-2 uppercase ${activeTab === "candidates" ? "border-b-2 border-blue-600 font-semibold" : ""}`}
                     onClick={() => { setActiveTab("candidates"); setCurrentPage(1); }}
                 >
                     Candidates
                 </button>
                 <button
-                    className={`px-4 py-2 ${activeTab === "interviews" ? "border-b-2 border-blue-600 font-semibold" : ""}`}
+                    className={`px-4 py-2 uppercase ${activeTab === "interviews" ? "border-b-2 border-blue-600 font-semibold" : ""}`}
                     onClick={() => { setActiveTab("interviews"); setCurrentPage(1); }}
                 >
                     Upcoming Interviews
@@ -343,7 +349,11 @@ export default function Dashboard() {
             {/* Tab Content */}
             {activeTab === "candidates" && (
                 <section>
-                    {candidates.length === 0 ? (
+                    {loading ? (
+                        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                            {Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)}
+                        </div>
+                    ) : candidates.length === 0 ? (
                         <p className="text-gray-500">No candidates found.</p>
                     ) : (
                         <>
@@ -362,7 +372,11 @@ export default function Dashboard() {
 
             {activeTab === "interviews" && (
                 <section>
-                    {interviews.length === 0 ? (
+                    {loading ? (
+                        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                            {Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)}
+                        </div>
+                    ) : interviews.length === 0 ? (
                         <p className="text-gray-500">No interviews scheduled.</p>
                     ) : (
                         <>
@@ -381,8 +395,12 @@ export default function Dashboard() {
 
             {/* Feedback */}
             <section>
-                <h2 className="text-2xl font-semibold mb-3 text-gray-800">Recent Feedback</h2>
-                {interviews.filter((i) => i.feedback).length === 0 ? (
+                <h2 className="text-2xl font-semibold uppercase mb-3 text-gray-800">Recent Feedback</h2>
+                {loading ? (
+                    <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                        {Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)}
+                    </div>
+                ) : interviews.filter((i) => i.feedback).length === 0 ? (
                     <p className="text-gray-500">No feedback yet.</p>
                 ) : (
                     <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
@@ -405,7 +423,7 @@ function Pagination({ total, current, onChange }) {
             {pages.map((p) => (
                 <button
                     key={p}
-                    className={`px-3 py-1 border rounded ${p === current ? "bg-blue-600 text-white" : "bg-white"}`}
+                    className={`px-3 py-1 border rounded ${p === current ? "bg-blue-600 text-white cursor-pointer" : "bg-white cursor-pointer"}`}
                     onClick={() => onChange(p)}
                 >
                     {p}

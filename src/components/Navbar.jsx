@@ -21,8 +21,8 @@ export default function Navbar() {
     return (
         <nav className="bg-white shadow sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                <Link to="/" className="text-2xl font-bold text-indigo-600">
-                    Interview Dashboard
+                <Link to="/" className="text-2xl font-bold text-indigo-600 uppercase">
+                    Mini Interview Platform
                 </Link>
 
                 <div className="space-x-4">
@@ -30,7 +30,7 @@ export default function Navbar() {
                         <>
                             <button
                                 onClick={handleLogout}
-                                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+                                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition uppercase cursor-pointer"
                             >
                                 Logout
                             </button>
@@ -39,13 +39,13 @@ export default function Navbar() {
                         <>
                             <Link
                                 to="/login"
-                                className="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition"
+                                className="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition uppercase cursor-pointer"
                             >
                                 Login
                             </Link>
                             <Link
                                 to="/signup"
-                                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+                                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition uppercase cursor-pointer"
                             >
                                 Signup
                             </Link>
